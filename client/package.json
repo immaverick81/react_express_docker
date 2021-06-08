@@ -1,0 +1,77 @@
+{
+  "name": "tailwind-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/line-clamp": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.1",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^12.20.13",
+    "@types/react": "^17.0.8",
+    "@types/react-dom": "^17.0.5",
+    "axios": "^0.21.1",
+    "chokidar-cli": "^2.1.0",
+    "jwt-decode": "^3.1.2",
+    "npm-run-all": "^4.1.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.7.0",
+    "react-redux": "^7.2.4",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "typescript": "^4.3.2",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start1": "npm run tailwind:css && react-scripts start",
+    "tailwind:css": "tailwind build src/tailwind.css -c  tailwind.config.js -o src/tailwind.output.css",
+    "build:tailwind": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
+    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css -c 'npm run build:tailwind'",
+    "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
+    "start:react": "react-scripts start",
+    "prestart": "npm run build:tailwind",
+    "prebuild": "npm run build:tailwind",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@headlessui/react": "^1.2.0",
+    "@heroicons/react": "^1.0.1",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
+    "ag-grid-community": "^25.3.0",
+    "ag-grid-react": "^25.3.0",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.0",
+    "react-router-dom": "^5.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "tailwindcss": "^2.1.2"
+  }
+}
